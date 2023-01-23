@@ -9,13 +9,19 @@ public class Main {
                 // Empiler l'argument dans la pile
                 pile.empiler(arg);
             }
+        } catch (PilePleineException e) {
+            // Afficher le message d'erreur
+            System.out.println(e.getMessage());
+        }
+
+        try {
             while (!pile.estVide()) {
                 // Afficher le dernier élément empilé (premier dépilé)
                 System.out.println(pile.depiler());
             }
-        } catch (PilePleineException | PileVideException e) {
-            // Afficher le message d'erreur
-            System.out.println(e.getMessage());
+        } catch (PileVideException e) {
+                // Afficher le message d'erreur
+                System.out.println(e.getMessage());
         }
     }
     
